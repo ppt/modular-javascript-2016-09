@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": 1,
+        "node": 1,
+        "es6": 1
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "keyword-spacing": "error",
+        "space-infix-ops": "error",
+        "comma-spacing": "error",
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": 0
+    }
+}
