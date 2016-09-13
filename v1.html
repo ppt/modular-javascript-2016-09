@@ -10,17 +10,13 @@
 <script>
   var people = [];
 
-  function renderPeople() {
-    var s = '';
-    for (i = 0; i < people.length; i++) {
-      s = s + '<li>' + people[i] + '</li>';
-    }
-    return s;
-  }
-
   $('#peopleModule').find('button').on('click', function() {
     people.push($('#peopleModule').find('input').val());
-    $('#peopleModule').find('ul').html(renderPeople());
+    var s = '';
+    for (var i = 0; i < people.length; i++) {
+      s = s + '<li>' + people[i] + '</li>';
+    }
+    $('#peopleModule').find('ul').html(s);
   });
 
   $('#peopleModule').find('ul').on('click', 'li', function(e) {
