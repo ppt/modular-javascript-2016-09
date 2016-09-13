@@ -1,0 +1,17 @@
+{
+  "name": "modular-javascript-2016-09",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Object-Literal.js",
+  "scripts": {
+    "start": "livereload & http-server &",
+    "stop": "pkill node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "livereload": "^0.5.0"
+  }
+}

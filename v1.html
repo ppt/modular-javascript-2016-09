@@ -1,0 +1,32 @@
+<div id="peopleModule">
+  <h1>People2</h1>
+  <input type="text">
+  <button>Add Person</button>
+  <ul></ul>
+</div>
+
+<script src="jquery.js"></script>
+
+<script>
+  var people = [];
+
+  function renderPeople() {
+    var s = '';
+    for (i = 0; i < people.length; i++) {
+      s = s + '<li>' + people[i] + '</li>';
+    }
+    return s;
+  }
+
+  $('#peopleModule').find('button').on('click', function() {
+    people.push($('#peopleModule').find('input').val());
+    $('#peopleModule').find('ul').html(renderPeople());
+  });
+
+  $('#peopleModule').find('ul').on('click', 'li', function(e) {
+    var $remove = $(e.target)
+    var i = $('#peopleModule').find('li').index($remove);
+    $remove.remove();
+    people.splice(i, 1);
+  });
+</script>
