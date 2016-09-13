@@ -1,0 +1,59 @@
+<div id="peopleModule">
+  <h1>People</h1>
+  <input type="text">
+  <button>Add Person</button>
+  <ul></ul>
+</div>
+
+<script src="jquery.js"></script>
+
+<script>
+  var people_module = (function() {
+    var people = [1, 2],
+    $el,$button,$input,$ul;
+
+    function init(base) {
+      cacheDom(base);
+      bindEvents();
+      render();
+    }
+
+    function cacheDom(base) {
+      $el = base;
+      $button = $el.find('button');
+      $input = $el.find('input');
+      $ul = $el.find('ul');
+    }
+
+    function bindEvents() {
+      $button.on("click", addPerson);
+      $ul.on("click", "li", deletePerson);
+    }
+
+    function addPerson() {
+      people.push($input.val());
+      render();
+    }
+
+    function deletePerson(event) {
+      var $remove = $(event.target);
+      var i = $ul.find("li").index($remove);
+      people.splice(i, 1);
+      render();
+    }
+
+    function render() {
+      var s = "";
+      for (var i = 0; i < people.length; i++) {
+        s = s + "<li>" + people[i] + "</li>";
+      }
+      $ul.html(s);
+    }
+
+    return {
+      init: init,
+    };
+  })();
+
+  people_module.init($('#peopleModule'));
+</script>

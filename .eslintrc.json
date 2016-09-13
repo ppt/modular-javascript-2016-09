@@ -2,7 +2,8 @@
     "env": {
         "browser": 1,
         "node": 1,
-        "es6": 1
+        "es6": 1,
+        "jquery": 1
     },
     "extends": "eslint:recommended",
     "rules": {
